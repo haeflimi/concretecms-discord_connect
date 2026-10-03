@@ -1,5 +1,5 @@
 {
-    "name": "haeflimi/concretecms-discord_connect",
+    "name": "haeflimi/discord_connect",
     "type": "concrete5-package",
     "require": {
         "php": ">=8",
