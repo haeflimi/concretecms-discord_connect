@@ -1,0 +1,12 @@
+{
+    "name": "haeflimi/concretecms-discord_connect",
+    "type": "concrete5-package",
+    "require": {
+        "php": ">=8",
+        "concrete5/core": ">=9"
+    },
+    "minimum-stability": "dev",
+    "support": {
+        "source": "https://github.com/haeflimi/concretecms-discord_connect"
+    }
+}
