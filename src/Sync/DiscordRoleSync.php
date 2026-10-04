@@ -9,6 +9,7 @@ use Concrete\Core\User\Group\GroupRepository;
 use Concrete\Core\User\User;
 use DiscordConnect\Api\DiscordApi;
 use DiscordConnect\Api\DiscordApiException;
+use DiscordConnect\DiscordAccounts;
 use DiscordConnect\DiscordConfig;
 use DiscordConnect\Entity\DiscordRoleMapping;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,6 +36,9 @@ class DiscordRoleSync
     /** @var DiscordConfig */
     protected $config;
 
+    /** @var DiscordAccounts */
+    protected $accounts;
+
     /** @var GroupRepository */
     protected $groupRepository;
 
@@ -47,12 +51,16 @@ class DiscordRoleSync
     /** @var array<string, int> changes of the current sync, see getStats() */
     protected $stats = [];
 
-    public function __construct(EntityManagerInterface $entityManager, Connection $db, DiscordApi $api, DiscordConfig $config, GroupRepository $groupRepository, LoggerFactory $loggerFactory)
+    /** @var bool whether we're changing a group membership ourselves, see pushGroupChange() */
+    protected $changingGroup = false;
+
+    public function __construct(EntityManagerInterface $entityManager, Connection $db, DiscordApi $api, DiscordConfig $config, DiscordAccounts $accounts, GroupRepository $groupRepository, LoggerFactory $loggerFactory)
     {
         $this->entityManager = $entityManager;
         $this->db = $db;
         $this->api = $api;
         $this->config = $config;
+        $this->accounts = $accounts;
         $this->groupRepository = $groupRepository;
         $this->logger = $loggerFactory->createLogger(Channels::CHANNEL_AUTHENTICATION);
     }
@@ -201,6 +209,50 @@ class DiscordRoleSync
     }
 
     /**
+     * A user entered or left a group in the CMS (on_user_enter_group/on_user_exit_group events): update their roles on
+     * Discord right away for the mappings that sync to Discord. Failures are logged, the next sync retries them.
+     */
+    public function pushGroupChange(int $uID, int $gID, bool $entered): void
+    {
+        // Changes made by the sync itself come from Discord
+        if ($this->changingGroup) {
+            return;
+        }
+        $mappings = array_filter($this->getMappings(), static function (DiscordRoleMapping $mapping) use ($gID) {
+            return $mapping->getGroupID() === $gID && $mapping->syncsToDiscord();
+        });
+        $guildId = $this->config->getGuildId();
+        if ($mappings === [] || $guildId === null || !$this->api->hasBotToken()) {
+            return;
+        }
+        $discordId = $this->accounts->getDiscordId($uID);
+        if ($discordId === null) {
+            return;
+        }
+
+        // A visitor may be waiting for the page to save
+        $api = $this->api->withoutWaiting();
+        foreach ($mappings as $mapping) {
+            try {
+                if ($entered) {
+                    $api->addGuildMemberRole($guildId, $discordId, $mapping->getRoleId());
+                } else {
+                    $api->removeGuildMemberRole($guildId, $discordId, $mapping->getRoleId());
+                }
+            } catch (DiscordApiException $e) {
+                // 10007: Unknown Member, the user is not on the server
+                if ($e->getDiscordErrorCode() !== 10007) {
+                    $this->logger->warning(t('Unable to change the Discord role %s of %s: %s', $mapping->getRoleId(), $discordId, $e->getMessage()));
+                }
+                continue;
+            }
+            if ($mapping->getDirection() === DiscordRoleMapping::DIRECTION_BOTH) {
+                $this->setSyncState($mapping, $uID, $entered);
+            }
+        }
+    }
+
+    /**
      * A user unlinked their Discord account: remove them from the groups that are managed by Discord.
      */
     public function removeUser(int $uID): void
@@ -236,13 +288,20 @@ class DiscordRoleSync
      */
     protected function setGroup(User $user, $group, bool $add, bool $isInGroup): void
     {
-        if ($add && !$isInGroup) {
-            $user->enterGroup($group);
-            $this->count('groupAdded');
-        } elseif (!$add && $isInGroup) {
-            $user->exitGroup($group);
-            $this->count('groupRemoved');
+        if ($add === $isInGroup) {
+            return;
         }
+        $this->changingGroup = true;
+        try {
+            if ($add) {
+                $user->enterGroup($group);
+            } else {
+                $user->exitGroup($group);
+            }
+        } finally {
+            $this->changingGroup = false;
+        }
+        $this->count($add ? 'groupAdded' : 'groupRemoved');
     }
 
     /**

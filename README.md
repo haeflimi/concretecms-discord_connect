@@ -37,8 +37,9 @@ with Concrete groups and choose the direction for each link:
   be above the role.
 - **Both ways**: a role or group membership added or removed on one side is added or removed on the other one too.
 
-Only users who linked their Discord account are affected. Roles are synced on login/connect and by the
-"Sync Discord Data" task. For security, the Administrators group can only be synced to Discord, and @everyone and
+Only users who linked their Discord account are affected. Group changes in the CMS are pushed to Discord right away
+(for links that sync to Discord). Changes on Discord are synced on login/connect and by the "Sync Discord Data" task,
+which also retries pushes that failed. For security, the Administrators group can only be synced to Discord, and @everyone and
 roles managed by integrations can only be synced to the website.
 
 ## Configuration ##

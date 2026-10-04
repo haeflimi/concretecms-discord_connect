@@ -45,7 +45,7 @@ $roleLabel = static function (?array $role, string $roleId): string {
     <dd class="col-sm-9"><?= t('A role or group membership that has been added or removed on one side is added or removed on the other one too.') ?></dd>
 </dl>
 <p class="text-muted">
-    <?= t('Roles are synced when users log in with Discord or connect their account, and for everybody by the "Sync Discord Data" task (<a href="%s">Automation</a>).', URL::to('/dashboard/system/automation/tasks')) ?>
+    <?= t('Group changes in the CMS are pushed to Discord right away. Changes on Discord are synced when users log in with Discord or connect their account, and for everybody by the "Sync Discord Data" task (<a href="%s">Automation</a>), which also retries everything that failed.', URL::to('/dashboard/system/automation/tasks')) ?>
 </p>
 
 <h3><?= t('Linked Roles') ?></h3>

@@ -19,7 +19,7 @@ class DiscordApi
     /** Members per request of GET /guilds/{guild.id}/members (maximum allowed by Discord) */
     protected const MEMBERS_PER_PAGE = 1000;
 
-    /** How often a rate limited request is retried */
+    /** How often a rate limited request is retried by default */
     protected const MAX_RETRIES = 3;
 
     /** Longest rate limit we wait for, in seconds */
@@ -31,10 +31,29 @@ class DiscordApi
     /** @var Repository */
     protected $config;
 
+    /** @var int */
+    protected $maxRetries = self::MAX_RETRIES;
+
+    /** @var int request timeout in seconds */
+    protected $timeout = 20;
+
     public function __construct(Client $httpClient, Repository $config)
     {
         $this->httpClient = $httpClient;
         $this->config = $config;
+    }
+
+    /**
+     * A copy for requests made while a visitor is waiting (e.g. while saving a page): a short timeout and no waiting
+     * for rate limits.
+     */
+    public function withoutWaiting(): self
+    {
+        $api = clone $this;
+        $api->maxRetries = 0;
+        $api->timeout = 5;
+
+        return $api;
     }
 
     public function hasBotToken(): bool
@@ -157,7 +176,7 @@ class DiscordApi
             throw new DiscordApiException(t('No Discord bot token configured.'));
         }
         $options += [
-            'timeout' => 20,
+            'timeout' => $this->timeout,
             'http_errors' => false,
         ];
         $options['headers'] = ($options['headers'] ?? []) + [
@@ -175,7 +194,7 @@ class DiscordApi
             $status = $response->getStatusCode();
             $data = json_decode((string) $response->getBody(), true);
 
-            if ($status === 429 && $attempt < self::MAX_RETRIES) {
+            if ($status === 429 && $attempt < $this->maxRetries) {
                 $retryAfter = (float) ($data['retry_after'] ?? $response->getHeaderLine('Retry-After') ?: 1);
                 if ($retryAfter <= self::MAX_RETRY_AFTER) {
                     usleep((int) ceil($retryAfter * 1000000));
