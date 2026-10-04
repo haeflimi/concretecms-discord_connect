@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+    <singlepages>
+        <page name="Discord Roles" path="/dashboard/system/registration/discord_roles"
+              filename="/dashboard/system/registration/discord_roles.php" pagetype=""
+              description="Link Discord roles with groups" package="discord_connect">
+            <attributes>
+                <attributekey handle="meta_keywords">
+                    <value>discord, roles, groups, sync, server, guild</value>
+                </attributekey>
+            </attributes>
+        </page>
+    </singlepages>
+    <tasks>
+        <task handle="sync_discord_data" package="discord_connect"/>
+    </tasks>
+</concrete5-cif>
