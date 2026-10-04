@@ -24,7 +24,7 @@ with your own Discord server.
   "Create Invite" permission to add users to the server, and "Manage Roles" to assign roles.
 - Enter the bot token and the server ID in the dashboard. The dashboard shows whether the bot can access the server.
 - Schedule the "Sync Discord Data" task (Dashboard › System & Settings › Automation, or
-  `concrete/bin/concrete tasks:sync-discord-data`).
+  `concrete/bin/concrete task:sync-discord-data`).
 
 ### Roles and groups ###
 
