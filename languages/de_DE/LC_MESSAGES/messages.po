@@ -1,0 +1,460 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the discord_connect package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: discord_connect\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 22:02+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: discord_connect/controller.php:31
+msgid "Discord Connect"
+msgstr "Discord Connect"
+
+#: discord_connect/controller.php:36
+msgid "Adds an Authenticator for Discord and connects the users to your Discord server."
+msgstr "Fügt eine Anmeldung über Discord hinzu und verbindet die Benutzer mit deinem Discord-Server."
+
+#: discord_connect/controller.php:82
+#, php-format
+msgid "Unable to push a group change to Discord: %s"
+msgstr "Eine Gruppenänderung konnte nicht an Discord übertragen werden: %s"
+
+#: discord_connect/authentication/discord/controller.php:88
+#: discord_connect/authentication/discord/controller.php:100
+msgid "You are already logged in."
+msgstr "Du bist bereits angemeldet."
+
+#: discord_connect/authentication/discord/controller.php:105
+#: discord_connect/authentication/discord/controller.php:224
+msgid "Discord authentication failed. Please try again."
+msgstr "Die Anmeldung mit Discord ist fehlgeschlagen. Bitte versuche es erneut."
+
+#: discord_connect/authentication/discord/controller.php:112
+#: discord_connect/authentication/discord/controller.php:386
+msgid "Failed to complete authentication."
+msgstr "Die Anmeldung konnte nicht abgeschlossen werden."
+
+#: discord_connect/authentication/discord/controller.php:119
+msgid "This account has not yet been validated. Please check the email associated with this account and follow the link it contains."
+msgstr "Dieses Konto wurde noch nicht bestätigt. Bitte prüfe die E-Mails an die Adresse dieses Kontos und folge dem enthaltenen Link."
+
+#: discord_connect/authentication/discord/controller.php:126
+msgid "No local user account is associated with this Discord account. Please log in with a local account and connect your Discord account from your user profile."
+msgstr "Mit diesem Discord-Konto ist kein lokales Benutzerkonto verknüpft. Bitte melde dich mit einem lokalen Konto an und verknüpfe dein Discord-Konto in deinem Profil."
+
+#: discord_connect/authentication/discord/controller.php:132
+#: discord_connect/authentication/discord/controller.php:184
+msgid "A user account already exists for this email, please log in and attach your Discord account from your account page."
+msgstr "Für diese E-Mail-Adresse gibt es bereits ein Benutzerkonto. Bitte melde dich an und verknüpfe dein Discord-Konto auf deiner Kontoseite."
+
+#: discord_connect/authentication/discord/controller.php:139
+#: discord_connect/authentication/discord/controller.php:193
+msgid "Unable to create new account."
+msgstr "Das neue Konto konnte nicht erstellt werden."
+
+#: discord_connect/authentication/discord/controller.php:163
+msgid "Your registration session has expired. Please sign in with Discord again."
+msgstr "Deine Registrierungssitzung ist abgelaufen. Bitte melde dich erneut mit Discord an."
+
+#: discord_connect/authentication/discord/controller.php:179
+msgid "Please enter a valid email address."
+msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
+
+#: discord_connect/authentication/discord/controller.php:201
+#, php-format
+msgid "Your account has been created. We sent an email to %s: click on the link it contains to confirm your email address, then you can log in with Discord."
+msgstr "Dein Konto wurde erstellt. Wir haben eine E-Mail an %s geschickt: Klicke auf den enthaltenen Link, um deine E-Mail-Adresse zu bestätigen. Danach kannst du dich mit Discord anmelden."
+
+#: discord_connect/authentication/discord/controller.php:207
+msgid "A user must be logged in to attach a Discord account."
+msgstr "Um ein Discord-Konto zu verknüpfen, musst du angemeldet sein."
+
+#: discord_connect/authentication/discord/controller.php:230
+msgid "This Discord account is already connected to another user account."
+msgstr "Dieses Discord-Konto ist bereits mit einem anderen Benutzerkonto verknüpft."
+
+#: discord_connect/authentication/discord/controller.php:236
+msgid "Unable to attach user."
+msgstr "Das Konto konnte nicht verknüpft werden."
+
+#: discord_connect/authentication/discord/controller.php:240
+msgid "Successfully attached."
+msgstr "Erfolgreich verknüpft."
+
+#: discord_connect/authentication/discord/controller.php:257
+msgid "Unable to detach account."
+msgstr "Die Verknüpfung konnte nicht gelöst werden."
+
+#: discord_connect/authentication/discord/controller.php:261
+msgid "Successfully detached."
+msgstr "Verknüpfung erfolgreich gelöst."
+
+#: discord_connect/authentication/discord/controller.php:268
+msgid "The Discord server ID must be a number."
+msgstr "Die Discord-Server-ID muss eine Zahl sein."
+
+#: discord_connect/authentication/discord/controller.php:272
+msgid "The invite link must start with https://"
+msgstr "Der Einladungslink muss mit https:// beginnen"
+
+#: discord_connect/authentication/discord/controller.php:355
+#, php-format
+msgid "Discord authentication failed: %s"
+msgstr "Anmeldung mit Discord fehlgeschlagen: %s"
+
+#: discord_connect/authentication/discord/controller.php:404
+#, php-format
+msgid "Unable to connect the Discord account %s with the Discord server: %s"
+msgstr "Das Discord-Konto %s konnte nicht mit dem Discord-Server verbunden werden: %s"
+
+#: discord_connect/authentication/discord/form.php:27
+#, php-format
+msgid "Register an account for \"%s\""
+msgstr "Konto für „%s“ registrieren"
+
+#: discord_connect/authentication/discord/form.php:29
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+#: discord_connect/authentication/discord/form.php:30
+msgid "Register"
+msgstr "Registrieren"
+
+#: discord_connect/authentication/discord/form.php:41
+#, php-format
+msgid "Log in with %s"
+msgstr "Mit %s anmelden"
+
+#: discord_connect/authentication/discord/hook.php:4
+#: discord_connect/authentication/discord/hook.php:10
+#, php-format
+msgid "Attach a %s account"
+msgstr "%s-Konto verknüpfen"
+
+#: discord_connect/authentication/discord/hooked.php:14
+msgid "You are not a member of our Discord server yet."
+msgstr "Du bist noch nicht Mitglied auf unserem Discord-Server."
+
+#: discord_connect/authentication/discord/hooked.php:16
+msgid "Join it on Discord"
+msgstr "Auf Discord beitreten"
+
+#: discord_connect/authentication/discord/hooked.php:18
+msgid "Reconnect your Discord account to join it"
+msgstr "Verknüpfe dein Discord-Konto erneut, um beizutreten"
+
+#: discord_connect/authentication/discord/hooked.php:24
+#: discord_connect/authentication/discord/hooked.php:30
+#, php-format
+msgid "Detach your %s account"
+msgstr "Verknüpfung mit deinem %s-Konto lösen"
+
+#: discord_connect/authentication/discord/hooked.php:37
+#, php-format
+msgid "Connected Discord account: %s"
+msgstr "Verknüpftes Discord-Konto: %s"
+
+#: discord_connect/authentication/discord/type_form.php:25
+#, php-format
+msgid "Create an application in the <a href=\"%s\" target=\"_blank\" rel=\"noopener\">Discord Developer Portal</a>. Under OAuth2, copy the client ID and secret and add this redirect URL:"
+msgstr "Erstelle eine Anwendung im <a href=\"%s\" target=\"_blank\" rel=\"noopener\">Discord Developer Portal</a>. Kopiere unter OAuth2 die Client ID und das Client Secret und füge diese Redirect-URL hinzu:"
+
+#: discord_connect/authentication/discord/type_form.php:30
+msgid "Client ID"
+msgstr "Client ID"
+
+#: discord_connect/authentication/discord/type_form.php:34
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: discord_connect/authentication/discord/type_form.php:39
+msgid "Our Discord Server"
+msgstr "Unser Discord-Server"
+
+#: discord_connect/authentication/discord/type_form.php:43
+#, php-format
+msgid "Connected to the server \"%s\" (%s members)."
+msgstr "Verbunden mit dem Server „%s“ (%s Mitglieder)."
+
+#: discord_connect/authentication/discord/type_form.php:50
+msgid "Bot Token"
+msgstr "Bot Token"
+
+#: discord_connect/authentication/discord/type_form.php:53
+msgid "Optional, needed for all server features. In the Developer Portal, under Bot: reset and copy the token and enable the \"Server Members Intent\". The bot needs the \"Create Invite\" permission to add users to the server and \"Manage Roles\" to assign roles."
+msgstr "Optional, nötig für alle Server-Funktionen. Im Developer Portal unter Bot: Token zurücksetzen und kopieren und den „Server Members Intent“ aktivieren. Der Bot braucht die Berechtigung „Create Invite“, um Benutzer zum Server hinzuzufügen, und „Manage Roles“, um Rollen zuzuweisen."
+
+#: discord_connect/authentication/discord/type_form.php:55
+#, php-format
+msgid "Then <a href=\"%s\" target=\"_blank\" rel=\"noopener\">add the bot to your server</a>."
+msgstr "Dann <a href=\"%s\" target=\"_blank\" rel=\"noopener\">füge den Bot zu deinem Server hinzu</a>."
+
+#: discord_connect/authentication/discord/type_form.php:60
+msgid "Server ID"
+msgstr "Server-ID"
+
+#: discord_connect/authentication/discord/type_form.php:62
+msgid "Enable the Developer Mode in Discord (User Settings › Advanced), then right-click the server and choose \"Copy Server ID\"."
+msgstr "Aktiviere in Discord den Entwicklermodus (Benutzereinstellungen › Erweitert), klicke dann mit der rechten Maustaste auf den Server und wähle „Server-ID kopieren“."
+
+#: discord_connect/authentication/discord/type_form.php:65
+msgid "Invite Link"
+msgstr "Einladungslink"
+
+#: discord_connect/authentication/discord/type_form.php:67
+msgid "Optional. Shown in their profile to linked users who are not on the server."
+msgstr "Optional. Wird verknüpften Benutzern, die nicht auf dem Server sind, in ihrem Profil angezeigt."
+
+#: discord_connect/authentication/discord/type_form.php:72
+msgid "Add users to the server when they log in or connect their Discord account"
+msgstr "Benutzer zum Server hinzufügen, wenn sie sich anmelden oder ihr Discord-Konto verknüpfen"
+
+#: discord_connect/authentication/discord/type_form.php:76
+msgid "Roles and Groups"
+msgstr "Rollen und Benutzergruppen"
+
+#: discord_connect/authentication/discord/type_form.php:78
+#, php-format
+msgid "%s Discord role is linked with a group."
+msgid_plural "%s Discord roles are linked with groups."
+msgstr[0] "%s Discord-Rolle ist mit einer Benutzergruppe verknüpft."
+msgstr[1] "%s Discord-Rollen sind mit Benutzergruppen verknüpft."
+
+#: discord_connect/authentication/discord/type_form.php:79
+msgid "Manage the role sync"
+msgstr "Rollen-Synchronisierung verwalten"
+
+#: discord_connect/authentication/discord/type_form.php:85
+msgid "Registration"
+msgstr "Registrierung"
+
+#: discord_connect/authentication/discord/type_form.php:89
+msgid "Allow automatic registration"
+msgstr "Automatische Registrierung erlauben"
+
+#: discord_connect/authentication/discord/type_form.php:91
+msgid "Users without a verified email address on Discord have to enter and confirm one."
+msgstr "Benutzer ohne bestätigte E-Mail-Adresse auf Discord müssen eine eingeben und bestätigen."
+
+#: discord_connect/authentication/discord/type_form.php:94
+msgid "Group to enter on registration"
+msgstr "Benutzergruppe bei der Registrierung"
+
+#: discord_connect/authentication/discord/type_form.php:95
+msgctxt "Group"
+msgid "None"
+msgstr "Keine"
+
+#: discord_connect/src/Api/DiscordApi.php:176
+msgid "No Discord bot token configured."
+msgstr "Kein Discord Bot Token konfiguriert."
+
+#: discord_connect/src/Api/DiscordApi.php:192
+#, php-format
+msgid "Unable to reach the Discord API: %s"
+msgstr "Die Discord-API ist nicht erreichbar: %s"
+
+#: discord_connect/src/Api/DiscordApi.php:210
+#, php-format
+msgid "Discord API error %s on %s: %s"
+msgstr "Discord-API-Fehler %s bei %s: %s"
+
+#: discord_connect/src/Entity/DiscordRoleMapping.php:62
+msgid "Discord → CMS"
+msgstr "Discord → CMS"
+
+#: discord_connect/src/Entity/DiscordRoleMapping.php:63
+msgid "CMS → Discord"
+msgstr "CMS → Discord"
+
+#: discord_connect/src/Entity/DiscordRoleMapping.php:64
+msgid "Both ways"
+msgstr "In beide Richtungen"
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:117
+msgid "Please choose a direction."
+msgstr "Bitte wähle eine Richtung."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:121
+msgid "Please choose a Discord role."
+msgstr "Bitte wähle eine Discord-Rolle."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:123
+#, php-format
+msgid "The role \"%s\" can't be assigned by the bot, it can only be synced to the CMS."
+msgstr "Die Rolle „%s“ kann der Bot nicht zuweisen, sie kann nur ins CMS synchronisiert werden."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:127
+msgid "Please choose a group."
+msgstr "Bitte wähle eine Benutzergruppe."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:129
+#, php-format
+msgid "The group \"%s\" can't be synced."
+msgstr "Die Benutzergruppe „%s“ kann nicht synchronisiert werden."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:132
+msgid "The Administrators group can only be synced to Discord."
+msgstr "Die Benutzergruppe Administrators kann nur zu Discord synchronisiert werden."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:136
+msgid "This role and group are already linked."
+msgstr "Diese Rolle und Benutzergruppe sind bereits verknüpft."
+
+#: discord_connect/src/Sync/DiscordRoleSync.php:245
+#: discord_connect/src/Sync/DiscordRoleSync.php:323
+#, php-format
+msgid "Unable to change the Discord role %s of %s: %s"
+msgstr "Die Discord-Rolle %s von %s konnte nicht geändert werden: %s"
+
+#: discord_connect/src/Sync/DiscordGuildSync.php:89
+#, php-format
+msgid "The Discord server has %s members."
+msgstr "Der Discord-Server hat %s Mitglieder."
+
+#: discord_connect/src/Sync/DiscordGuildSync.php:101
+#, php-format
+msgid "%s of %s linked users are members of the Discord server."
+msgstr "%s von %s verknüpften Benutzern sind Mitglied des Discord-Servers."
+
+#: discord_connect/src/Sync/DiscordGuildSync.php:105
+#, php-format
+msgid "Role sync: %s group memberships added, %s removed; %s Discord roles added, %s removed, %s failed."
+msgstr "Rollen-Synchronisierung: %s Gruppenmitgliedschaften hinzugefügt, %s entfernt; %s Discord-Rollen hinzugefügt, %s entfernt, %s fehlgeschlagen."
+
+#: discord_connect/src/Command/SyncDiscordDataCommandHandler.php:28
+#, php-format
+msgid "Removed the data of %s unlinked Discord accounts."
+msgstr "Die Daten von %s nicht mehr verknüpften Discord-Konten wurden entfernt."
+
+#: discord_connect/src/Command/Task/SyncDiscordDataController.php:26
+msgid "Sync Discord Data"
+msgstr "Discord-Daten synchronisieren"
+
+#: discord_connect/src/Command/Task/SyncDiscordDataController.php:31
+msgid "Checks which users who linked their Discord account are members of our Discord server, updates their Discord profile and syncs the roles linked with groups."
+msgstr "Prüft, welche Benutzer mit verknüpftem Discord-Konto Mitglied unseres Discord-Servers sind, aktualisiert ihr Discord-Profil und synchronisiert die mit Benutzergruppen verknüpften Rollen."
+
+#: discord_connect/src/Command/Task/SyncDiscordDataController.php:42
+msgid "Please configure the Discord server and the bot token in the Discord authentication type first."
+msgstr "Bitte konfiguriere zuerst den Discord-Server und den Bot Token im Discord-Anmeldetyp."
+
+#: discord_connect/src/Command/Task/SyncDiscordDataController.php:45
+msgid "Discord data synced."
+msgstr "Discord-Daten synchronisiert."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:19
+#, php-format
+msgid "Unknown role (%s)"
+msgstr "Unbekannte Rolle (%s)"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:24
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:95
+msgid "(server membership)"
+msgstr "(Server-Mitgliedschaft)"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:30
+#, php-format
+msgid "Please configure the Discord server and the bot token in the <a href=\"%s\">Discord authentication type</a> first."
+msgstr "Bitte konfiguriere zuerst den Discord-Server und den Bot Token im <a href=\"%s\">Discord-Anmeldetyp</a>."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:33
+#, php-format
+msgid "Unable to read the roles of the Discord server: %s"
+msgstr "Die Rollen des Discord-Servers konnten nicht gelesen werden: %s"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:37
+msgid "Link roles of your Discord server with groups of this website. Nothing is synced without a link. Only users who connected their Discord account are affected, other members of a group are left alone."
+msgstr "Verknüpfe Rollen deines Discord-Servers mit Benutzergruppen dieser Website. Ohne Verknüpfung wird nichts synchronisiert. Betroffen sind nur Benutzer, die ihr Discord-Konto verknüpft haben; andere Mitglieder einer Benutzergruppe bleiben unverändert."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:41
+msgid "Users with the role are put in the group, users without it are removed from it. Use the @everyone role for all members of the server."
+msgstr "Benutzer mit der Rolle kommen in die Benutzergruppe, Benutzer ohne sie werden daraus entfernt. Verwende die Rolle @everyone für alle Mitglieder des Servers."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:43
+msgid "Members of the group get the role, everybody else loses it. The bot needs the \"Manage Roles\" permission and its highest role has to be above the role."
+msgstr "Mitglieder der Benutzergruppe erhalten die Rolle, alle anderen verlieren sie. Der Bot braucht die Berechtigung „Manage Roles“ und seine höchste Rolle muss über der Rolle liegen."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:45
+msgid "A role or group membership that has been added or removed on one side is added or removed on the other one too."
+msgstr "Eine Rolle oder Gruppenmitgliedschaft, die auf einer Seite hinzugefügt oder entfernt wurde, wird auch auf der anderen hinzugefügt oder entfernt."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:48
+#, php-format
+msgid "Group changes in the CMS are pushed to Discord right away. Changes on Discord are synced when users log in with Discord or connect their account, and for everybody by the \"Sync Discord Data\" task (<a href=\"%s\">Automation</a>), which also retries everything that failed."
+msgstr "Gruppenänderungen im CMS werden sofort an Discord übertragen. Änderungen auf Discord werden synchronisiert, wenn sich Benutzer mit Discord anmelden oder ihr Konto verknüpfen, und für alle durch die Aufgabe „Discord-Daten synchronisieren“ (<a href=\"%s\">Automatisierung</a>), die auch alles Fehlgeschlagene erneut versucht."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:51
+msgid "Linked Roles"
+msgstr "Verknüpfte Rollen"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:53
+msgid "No roles are linked, nothing is synced."
+msgstr "Keine Rollen verknüpft, es wird nichts synchronisiert."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:58
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:90
+msgid "Discord Role"
+msgstr "Discord-Rolle"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:59
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:101
+msgid "Direction"
+msgstr "Richtung"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:60
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:105
+msgid "Group"
+msgstr "Benutzergruppe"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:70
+#, php-format
+msgid "Deleted group (%s)"
+msgstr "Gelöschte Benutzergruppe (%s)"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:75
+msgid "Remove this link? Group memberships and roles are left as they are."
+msgstr "Diese Verknüpfung entfernen? Gruppenmitgliedschaften und Rollen bleiben unverändert."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:75
+msgid "Remove"
+msgstr "Entfernen"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:85
+msgid "Link a Role"
+msgstr "Rolle verknüpfen"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:92
+msgid "Choose a Role"
+msgstr "Rolle wählen"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:95
+msgid "(managed by an integration)"
+msgstr "(von einer Integration verwaltet)"
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:109
+msgid "@everyone and roles managed by an integration (bots, boosts) can only be synced to the website. The Administrators group can only be synced to Discord."
+msgstr "@everyone und von einer Integration verwaltete Rollen (Bots, Boosts) können nur zur Website synchronisiert werden. Die Benutzergruppe Administrators kann nur zu Discord synchronisiert werden."
+
+#: discord_connect/single_pages/dashboard/system/registration/discord_roles.php:110
+msgid "Link Role"
+msgstr "Rolle verknüpfen"
+
+#: discord_connect/controllers/single_page/dashboard/system/registration/discord_roles.php:79
+msgid "The role has been linked. It will be synced by the \"Sync Discord Data\" task and when users log in with Discord."
+msgstr "Die Rolle wurde verknüpft. Sie wird von der Aufgabe „Discord-Daten synchronisieren“ und bei der Anmeldung mit Discord synchronisiert."
+
+#: discord_connect/controllers/single_page/dashboard/system/registration/discord_roles.php:94
+msgid "The link has been removed. Group memberships and roles are left as they are."
+msgstr "Die Verknüpfung wurde entfernt. Gruppenmitgliedschaften und Rollen bleiben unverändert."
