@@ -21,7 +21,7 @@ class Controller extends Package implements ProviderAggregateInterface
 {
     protected $pkgHandle = 'discord_connect';
     protected $appVersionRequired = '9.0.0';
-    protected $pkgVersion = '1.1.0';
+    protected $pkgVersion = '1.2.0';
     protected $pkgAutoloaderRegistries = [
         'src' => 'DiscordConnect',
     ];
@@ -59,6 +59,11 @@ class Controller extends Package implements ProviderAggregateInterface
         });
         $director->addListener('on_user_exit_group', function ($event) {
             $this->pushGroupChange($event, false);
+        });
+
+        // terminal command "discord" (cli_mode package): sends the visitor into the Discord login
+        $this->app->make('director')->addListener('on_cli_mode_register_commands', static function ($event) {
+            $event->getRegistry()->register(\DiscordConnect\CliMode\DiscordCommand::make());
         });
     }
 
