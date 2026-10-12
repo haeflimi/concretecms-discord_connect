@@ -476,3 +476,12 @@ msgstr "Ab zu %s, dein Konto verbinden."
 
 msgid "Not logged in: takes you to the %1$s login, you come back signed in. Logged in: connects your %1$s account to your club account."
 msgstr "Nicht angemeldet: führt dich zur Anmeldung bei %1$s, du kommst angemeldet zurück. Angemeldet: verbindet dein %1$s-Konto mit deinem Vereinskonto."
+
+msgid "Connected Discord accounts"
+msgstr "Verbundene Discord-Konten"
+
+msgid "Discord"
+msgstr "Discord"
+
+msgid "Members on our Discord server"
+msgstr "Mitglieder auf unserem Discord-Server"

@@ -21,7 +21,7 @@ class Controller extends Package implements ProviderAggregateInterface
 {
     protected $pkgHandle = 'discord_connect';
     protected $appVersionRequired = '9.0.0';
-    protected $pkgVersion = '1.2.0';
+    protected $pkgVersion = '1.3.0';
     protected $pkgAutoloaderRegistries = [
         'src' => 'DiscordConnect',
     ];
@@ -45,6 +45,10 @@ class Controller extends Package implements ProviderAggregateInterface
 
     public function on_start()
     {
+        // figures for the block "Event Figure" (community_event_manager): only asked for when that package is installed
+        $this->app->make('director')->addListener('on_event_figures_register', static function ($event) {
+            \DiscordConnect\Figure\DiscordFigures::register($event->getSubject());
+        });
         $this->app->make(TaskManager::class)->extend('sync_discord_data', function () {
             return $this->app->make(SyncDiscordDataController::class);
         });
